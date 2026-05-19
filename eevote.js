@@ -12,10 +12,10 @@ const VOTE_TIMEOUT = 12000;
 const MAX_PROXY_FAILURES = 3;
 // ==================
 
-const TARGET_URL = '/api/list-vote/f0baf645-b093-4e65-97ca-74b2ae0f08ae/slide-688edef1ec5b';
+const TARGET_URL = '/api/list-vote/f0baf645-b093-4e65-97ca-74b2ae0f08ae/slide-1862b4aa510a';
 const TARGET_HOST = 'www.complex.com';
 
-const COOKIES = 'ajs_anonymous_id=d0cdc46c-a735-436b-a35b-e8d394e5ab86; cf_clearance=sZSkBOpZYzC77XWfxGMwgr7Qt3E0KdwcHXOJdJWaXTU-1779219459-1.2.1.1-bOJ.UAGryROBQXaVtW5e1lCzTFdRLplW3Tn.aHMZ1N7Py9U5ZXJYhOYqpz5vbxj_RBi4uKfK6BTb9ZA3PFXNSRP0jpm2ZXrv2eEL4k.wpM2d3pEfUY0godP.ZvkmDZVwkTv7rDNAC2iQYjmF_fsMb4e75zTxKPK9EJcMb9ZLRYwE2gXeuesWE2cGFv0YM2IEy1ynQzQP90P7WHcEeCx25OGQQb1.8p_q3CX0HXP1FSxcsbRj0B8f3IRjKkV65kbq6g6sI3QPtkW4jq_VryfhdbnwNK9kV4QuJ0FaS7obJ9VQwxoOihydE.3Kup0br6kqczk7T6o9N_1haQFZL1AwOw; __cf_bm=.RzCqlgClPXpAvoFntotg9PB51sudB.Qju0q4Q0ymyU-1779219459.711435-1.0.1.1-YncaKhczO1C2HOM3hAZtCHwJvOE2GX8CDbItc.noh02fbTafJ5jAkINsW2i.iJXBsr8YcyIONmNpRT2ec6qQO7n2mIA89_Z1ZakeC5m.oxihjNtNP7x_CnM8do_t9FBv; cmn_daily_article_count=1; g_state={"i_l":0,"i_ll":1779219460010,"i_b":"AoFoqVgIYKOvdg8d+zS30J0R175DMm27jPJfA/KHoVY","i_e":{"enable_itp_optimization":0},"i_et":1779219460008}; analytics_session_id=1779219460165; session=e30%3D.%2B6nXsGO5TVoMb%2F8nOZwlnEP8xp%2FAL8to6buCwkPlIQo; isAuthenticated=false; _pbjs_userid_consent_data=3524755945110770; analytics_session_id.last_access=1779219462333';
+const COOKIES = 'ajs_anonymous_id=d0cdc46c-a735-436b-a35b-e8d394e5ab86; analytics_session_id=1779219460165; session=e30%3D.%2B6nXsGO5TVoMb%2F8nOZwlnEP8xp%2FAL8to6buCwkPlIQo; isAuthenticated=false; _pbjs_userid_consent_data=3524755945110770; cf_clearance=B5go1ZPjTdwUAh8etZzWgKe94az2Dmq0_.nHeUWN1wA-1779220237-1.2.1.1-dKu3dSMrSAfYUhWmwvevgp6y43LgPTeYvLr63lQsJwCaXz8TYaPy5vbioRJm74ALKiK6okGKkGD0aUbUwpAU8tZyF4PDmhb7zpqA3Eruk9I8uZ1AEXhD4vyWGr_oCe0wl01kXflJdomeWyKNRRKFYLdlUVZX.y3tv8ohoUNsJS6OaTA__DX5OoOa5_TiNAleY3oQrb00q0KFX_AWsc5aFQsZYQ6.y6eX1KgCICWywhMWCXyEqbSmxeWS5uIAm22YcMFk_G0BPh94.iyAtvjXf_JSjREL3Sa0TqAdJsxglhKaGbvygAqX1qHiMWzwetClCJ.Zk8kAiecdknTcjs9VXA; __cf_bm=rrawlgEEd60RE2sYIANnFljFGCfh6Ms.1hfjy6fmatQ-1779220237.270934-1.0.1.1-rem.Jb9Ty.3T.VPZaFdPXRa5VE84998AWG7eoPEjC4VHCiICvBiZKewYKdQnClLFNJyJ9hyKHnw.Mwe6A9zyOjtprUK_1fAZc21rR7fEFt8icGiIysgG3s8__ebcMIdV; socialKWTO=gl; cmn_daily_article_count=14; g_state={"i_l":0,"i_ll":1779220439855,"i_b":"AoFoqVgIYKOvdg8d+zS30J0R175DMm27jPJfA/KHoVY","i_e":{"enable_itp_optimization":0},"i_et":1779219460008}; analytics_session_id.last_access=1779220461733';
 
 const HEADERS = {
   'accept': '*/*',
@@ -50,7 +50,7 @@ function randomUUID() {
   });
 }
 
-const BODY = JSON.stringify({ vote: 'overrated' });
+const BODY = JSON.stringify({ vote: 'underrated' });
 
 // ===== PROXY SCRAPING =====
 
@@ -417,7 +417,7 @@ async function logVoteCount(label) {
   if (result.ok && result.data) {
     const counts = formatCounts(result.data);
     if (counts) {
-      console.log(`${BOLD}${label} Vote counts for slide-688edef1ec5b${RESET}`);
+      console.log(`${BOLD}${label} Vote counts for slide-1862b4aa510a${RESET}`);
       console.log(counts);
     } else {
       console.log(`${BOLD}${label} Vote count:${RESET} received unexpected data shape`);
